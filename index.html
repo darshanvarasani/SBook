@@ -1,31 +1,73 @@
 <html>
     <head>
         <title>SBook Home </title>
+        <link rel="stylesheet" href="css/home.css">
     </head>
-    <body>
-        <form action="login.html">
-            <input type="submit" value="Logout">
-        </form>
-    <center>
-        <div>
-            <a href="index.html">Feed</a>
-            <a href="friendlist.html">Friends</a>
-            <a href="profile.html">Profile</a>
-            <a href="messagebox.html">MessageBox</a>
+    <body style="background-color:aliceblue;">
+        <div class="header sticky">
+            <img src="images/logo.png" alt="SBook" style="border: 1px solid #ddd; border-radius: 4px;">
+            <div class="header-right">
+                <a class="active" href="index.html">Feed</a>
+                <a href="friends.html">Friends</a>
+                <a href="profile.html">Profile</a>
+                <a href="messagebox.html">MessageBox</a>
+                <a href="login.html">Logout</a>
+            </div>
         </div>
-        <br>
-        <div>
-            <input type="button" value="Add Story">
-            Friend's Stories will be avilable here
+        <div class="grid-container">
+            <div style="grid-column-start: 1;">
+            <div class="card" style="margin-top: 60px; width: 300px; height: 400px;">
+                <img src="images/avtar.jpg" alt="Avatar" style="width: 200px; height: 200px; border-radius: 50%; margin-left: 50px;">
+                <div style="padding: 2px 16px;">
+                    <h4><b>My Profile</b></h4>
+                    <p>Name : Darshan</p>
+                    <p>Degree : B.Tech(Computer Engineer)</p>
+                    <p>Home : Surat, Gujarat</p>
+                    <p>DOB : 2nd January 2001</p>
+                </div>
+            </div></div>
+            <div style="grid-column-start: 2;">
+            <div class="card" style="margin-top: 60px; width: 1000px; height:fit-content;">
+                <h3 style="padding-left: 10px;"><b>Stories</b></h3><hr>
+                <img src="images/avtar.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;">
+                <img src="images/user1.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;">
+                <img src="images/user2.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;">
+            </div>
+            <div class="card" style="margin-top: 10px; width: 1000px; height:fit-content;">
+                <h3 style="padding-left: 10px;"><b>Post Sommething</b></h3>
+                <input type="text" placeholder="Write Something.." name="userpost" required style="width: 500px; height: 40px; margin-left: 10px;">
+                <label>Upload photo : </label><input type="file" name="postphoto">
+                <br>
+                <input type="submit" value="Post" class="button1" style="margin: 10px; background-color: #4CAF50;">
+            </div>
+            <div class="card" style="margin-top: 10px; width: 1000px; height:fit-content;">
+                <table style="margin: 10px; text-align:left;">
+                    <tr>
+                        <td><img src="images/user1.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
+                        <td><h4>User1</h4></td>
+                    </tr>
+                </table>
+                <hr>
+                <p>Have you seen this..???</p>
+                <img src="images/user1post.jpg" alt="photo" style="width: auto; height: 500px;">
+                <br>
+                <input type="button" class="button1" value="Like" style="margin: 10px; background-color: cornflowerblue;">
+                <input type="button" class="button1" value="Comment" style="margin: 10px; background-color: cornflowerblue;">
+            </div>
+            <div class="card" style="margin-top: 10px; width: 1000px; height:fit-content;">
+                <table style="margin: 10px; text-align:left;">
+                    <tr>
+                        <td><img src="images/user2.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
+                        <td><h4>User2</h4></td>
+                    </tr>
+                </table>
+                <hr>
+                <p>Very beautiful pic..</p>
+                <img src="images/user2post1.jpg" alt="photo" style="width: auto; height: 500px;">
+                <br>
+                <input type="button" class="button1" value="Like" style="margin: 10px; background-color: cornflowerblue;">
+                <input type="button" class="button1" value="Comment" style="margin: 10px; background-color: cornflowerblue;">
+            </div></div>
         </div>
-        <br>
-        <div>
-            <a href=" ">Post a Photo/video</a>
-        </div>
-        <br>
-        <div>
-            Post of Users Friends will be shown here
-        </div>
-    </center>
     </body> 
 </html>

@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Friends</title>
+        <link rel="stylesheet" href="css/friends.css">
+    </head>
+    <body style="background-color:aliceblue;">
+        <div class="header sticky">
+            <img src="images/logo.png" alt="SBook">
+            <div class="header-right">
+                <a href="index.html">Feed</a>
+                <a class="active" href="friends.html">Friends</a>
+                <a href="profile.html">Profile</a>
+                <a href="messagebox.html">MessageBox</a>
+                <a href="login.html">Logout</a>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div style="grid-column-start: 1;">
+            <div class="card" style="margin-top: 60px; width: 300px; height: 400px;">
+                <img src="images/avtar.jpg" alt="Avatar" style="width: 200px; height: 200px; border-radius: 50%; margin-left: 50px;">
+                <div style="padding: 2px 16px;">
+                    <h4><b>My Profile</b></h4>
+                    <p>Name : Darshan</p>
+                    <p>Degree : B.Tech(Computer Engineer)</p>
+                    <p>Home : Surat, Gujarat</p>
+                    <p>DOB : 2nd January 2001</p>
+                </div>
+            </div></div>
+            <div style="grid-column-start: 2;">
+            <div class="card" style="margin-top: 60px; width: 1000px; height:fit-content;">
+                <h3 style="padding-left: 10px;"><b>Friend Requests :-</b></h3><hr>
+                <table style="margin: 20px; text-align: center; width: 30%;">
+                    <tr>
+                        <td><img src="images/user1.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
+                        <td><h4>User1</h4></td>
+                        <td><button class="button1" name="accept" value="accept" style=" background-color: #09680c;">accept</button></td>
+                        <td><button class="button1" name="decline" value="decline" style="background-color: #8b1510;">decline</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/user2.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
+                        <td><h4>User2</h4></td>
+                        <td><button class="button1" name="accept" value="accept" style="background-color: #09680c;">accept</button></td>
+                        <td><button class="button1" name="decline" value="decline" style="background-color: #8b1510;">decline</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card" style="margin-top: 10px; width: 1000px; height:fit-content;">
+                <input type="text" placeholder="Search for user.." name="userpost" required style="width: 500px; height: 40px; margin-left: 10px;">
+                <input type="button" class="button1" value="search" style="margin: 10px; background-color: cornflowerblue;">
+            </div>
+            <div class="card" style="margin-top: 10px; width: 1000px; height:fit-content;">
+                <h3 style="padding-left: 10px;"><b>Suggested Friends :-</b></h3><hr>
+                <table style="margin: 20px; text-align: center; width: 30%;">
+                    <tr>
+                        <td><img src="images/user3.png" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
+                        <td><h4>User3</h4></td>
+                        <td><button class="button1" name="addfriend" value="User3" style="background-color: cornflowerblue;">Add Friend</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/user4.png" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
+                        <td><h4>User4</h4></td>
+                        <td><button class="button1" name="addfriend" value="User4" style="background-color: cornflowerblue;">Add Friend</button></td>
+                    </tr>
+                </table>
+            </div></div>
+        </div>
+    </body>
+</html>

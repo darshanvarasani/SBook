@@ -1,35 +1,58 @@
 <html>
     <head>
         <title>SBook Sign up!</title>
+        <link rel="stylesheet" href="css/login.css">
     </head>
-    <body>
-        <center> <h1> Sign Up </h1> </center>
-        <form action="login.html" method="post"> 
-            <table align="center">           
-            <tr>
-                <td><label>Username : </label></td>
-                <td><input id="user" name="user" type="text" required></td>
-            </tr>
-            <tr>
-                <td><label>Email Address : </label></td>
-                <td><input id="pass" name="email" type="text" required></td>
-            </tr>
-            <tr>
-                <td><label>Password : </label></td>
-                <td><input id="pass" name="spass" type="password" data-type="password" required></td>
-            </tr>
-            <tr>
-                <td><label>Renter Password : </label></td>
-                <td><input id="pass" name="rpass" type="password" data-type="password" required></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Sign Up"></td>
-                <td><input type="reset" value="Cancel"></td>
-            </tr>
-            <tr>
-                <td colspan="2"><a href="login.html">Already Member?</a></td>
-            </tr>
-            </table>
-        </form>
+    <body style="background-color:aliceblue; align-items: center;">    
+        <div class="card" style="margin-top: 10px; width: fit-content;">  
+        <form action="login.html" method="POST">   
+            <img src="images/logo.png" alt="SBook" style=" border-radius: 8px; margin-top: 10px;"> <br> 
+            <label style="text-align: center; font-size:xx-large; font-family:Georgia, 'Times New Roman', Times, serif;">User SignUP</label>
+            <table style="text-align: right; margin-right: 10px;">           
+                <tr>
+                    <td><label>First Name : </label></td>
+                    <td><input type="text" placeholder="Enter First name" name="fname" required></td>
+                </tr>
+                <tr>
+                    <td><label>Last Name : </label></td>
+                    <td><input type="text" placeholder="Enter Last name" name="lname" required></td>
+                </tr>
+                <tr>
+                    <td><label>Email ID : </label></td>
+                    <td><input type="email" placeholder="Enter Email id" name="email" required></td>
+                </tr>
+                <tr>
+                    <td><label>Password : </label></td>
+                    <td><input id="pass" name="pass" placeholder="Enter password" type="password" data-type="password" required></td>
+                </tr>
+                <tr>
+                    <td><label>Confirm Password : </label></td>
+                    <td><input id="pass" name="cpass" placeholder="Confirm password" type="password" data-type="password" required></td>
+                </tr>
+                <tr>
+                    <td><label>Birthdate : </label></td>
+                    <td><input type="date" name="dob" required></td>
+                </tr>
+                <tr>
+                    <td><label>Gender : </label></td>
+                    <td align="left"><input type="radio" name="gender" value="Male">Male<input type="radio" name="gender" value="Female">Female</td>
+                </tr>
+                <tr>
+                    <td><label>City : </label></td>
+                    <td><input type="text" placeholder="Enter City" name="city"></td>
+                </tr>
+                <tr>
+                    <td><label>State : </label></td>
+                    <td><input type="text" placeholder="Enter State" name="state"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" class="button1" value="Login!" style="background-color: cornflowerblue;" ></td>
+                    <td><input type="reset" class="button1" value="Cancel" style="background-color: cornflowerblue;"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="left"><a href="login.html">Already Member?</a></td>
+                </tr>
+                </table>      
+        </form>  </div>   
     </body>
 </html>

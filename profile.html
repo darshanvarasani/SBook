@@ -1,67 +1,124 @@
 <html>
     <head>
         <title>Profile</title>
+        <link rel="stylesheet" href="css/profile.css">
     </head>
-    <body>
-        <form action="login.html">
-            <input type="submit" value="Logout">
-        </form>
-        <center>
-            <div>
+    <body style="background-color:aliceblue;">
+        <div class="header sticky">
+            <img src="images/logo.png" alt="SBook">
+            <div class="header-right">
                 <a href="index.html">Feed</a>
-                <a href="friendlist.html">Friends</a>
-                <a href="profile.html">Profile</a>
+                <a href="friends.html">Friends</a>
+                <a class="active" href="profile.html">Profile</a>
                 <a href="messagebox.html">MessageBox</a>
+                <a href="login.html">Logout</a>
             </div>
-            <br>
-            <div>
-                <img src="username.jpg" alt="Profile Picture">
-                <input type="button" value="Change Profile">
-            </div>
-            <br>
-            <div>
-                <h2>About</h2>
-                <table>
+        </div>
+        <div class="grid-container">
+            <div style="grid-column-start: 1;">
+            <div class="card" style="margin-top: 60px; width: 300px; height: 400px;">
+                <img src="images/avtar.jpg" alt="Avatar" style="width: 200px; height: 200px; border-radius: 50%; margin-left: 50px;">
+                <div style="padding: 2px 16px;">
+                    <h4><b>My Profile</b></h4>
+                    <p>Name : Darshan</p>
+                    <p>Degree : B.Tech(Computer Engineer)</p>
+                    <p>Home : Surat, Gujarat</p>
+                    <p>DOB : 2nd January 2001</p>
+                </div>
+            </div></div>
+            <div style="grid-column-start: 2;">
+            <div class="card" style="margin-top: 60px; width: 1000px; height:fit-content;">
+                <ul>
+                    <div style="margin-left: 10px;">
+                    <li><label for="about"><a class="active" href="#">About</a></label></li>
+                    <li><label for="friends"><a href="#">Friends</a></label></li>
+                    <li><label for="photos"><a href="#">Photos</a></label></li></div>
+                </ul>
+                <div id="about">
+                <table style="margin: 20px; text-align: center;">
                     <tr>
-                        <td>First Name : </td>
-                        <td></td>
+                        <td><label>First Name : </label></td>
+                        <td><input type="text" placeholder="Enter First name" name="fname" required></td>
                     </tr>
                     <tr>
-                        <td>Middle Name : </td>
-                        <td></td>
+                        <td><label>Middle Name : </label></td>
+                        <td><input type="text" placeholder="Enter middle name" name="mname" required></td>
                     </tr>
                     <tr>
-                        <td>Last Name : </td>
-                        <td></td>
+                        <td><label>Last Name : </label></td>
+                        <td><input type="text" placeholder="Enter Last name" name="lname" required></td>
                     </tr>
                     <tr>
-                        <td>Email ID : </td>
-                        <td></td>
+                        <td><label>Email ID : </label></td>
+                        <td><input type="email" placeholder="Enter Email id" name="email" required></td>
                     </tr>
                     <tr>
-                        <td>Birthdate : </td>
-                        <td></td>
+                        <td><label>Birthdate : </label></td>
+                        <td><input type="date" name="dob" required></td>
                     </tr>
                     <tr>
-                        <td>Gender : </td>
-                        <td></td>
+                        <td><label>Gender : </label></td>
+                        <td align="left"><input type="radio" name="gender" value="Male">Male<input type="radio" name="gender" value="Female">Female</td>
                     </tr>
                     <tr>
-                        <td>Hobbies : </td>
-                        <td></td>
+                        <td><label>Hobbies : </label></td>
+                        <td><input type="text" placeholder="Enter your hobbies" name="hobbies"></td>
                     </tr>
                     <tr>
-                        <td>City : </td>
-                        <td></td>
+                        <td><label>City : </label></td>
+                        <td><input type="text" placeholder="Enter City" name="city"></td>
                     </tr>
-
-                </table>
-                <input type="button" value="Update Details">
-            </div>
-            <br>
-            <div>
-                Users all Post will be shown here
-            </div>
-        </center>
+                    <tr>
+                        <td><label>State : </label></td>
+                        <td><input type="text" placeholder="Enter State" name="state"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" class="button1" value="Update Details" style="background-color: #4CAF50; float: right;"></td>
+                    </tr>
+                </table></div>
+                <div id="friends">
+                    <table style="margin: 20px; text-align: center; width: 30%;">
+                        <tr>
+                            <td><img src="images/user1.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
+                            <td><h4>User1</h4></td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/user2.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
+                            <td><h4>User2</h4></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="photos">
+                    <div class="card" style="margin-top: 10px; width: 1000px; height:fit-content;">
+                        <table style="margin: 10px; text-align:left;">
+                            <tr>
+                                <td><img src="images/avtar.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
+                                <td><h4>Darshan</h4></td>
+                            </tr>
+                        </table>
+                        <hr>
+                        <p>Wonderful...</p>
+                        <img src="images/wonderful.jpg" alt="photo" style="width: auto; height: 500px;">
+                        <br>
+                        <input type="button" class="button1" value="Like" style="margin: 10px; background-color: cornflowerblue;">
+                        <input type="button" class="button1" value="Comment" style="margin: 10px; background-color: cornflowerblue;">
+                    </div>
+                    <div class="card" style="margin-top: 10px; width: 1000px; height:fit-content;">
+                        <table style="margin: 10px; text-align:left;">
+                            <tr>
+                                <td><img src="images/avtar.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
+                                <td><h4>Darshan</h4></td>
+                            </tr>
+                        </table>
+                        <hr>
+                        <p>Sunset View..</p>
+                        <img src="images/sunset.jpg" alt="photo" style="width: auto; height: 500px;">
+                        <br>
+                        <input type="button" class="button1" value="Like" style="margin: 10px; background-color: cornflowerblue;">
+                        <input type="button" class="button1" value="Comment" style="margin: 10px; background-color: cornflowerblue;">
+                    </div>
+                </div>
+            </div></div>
+        </div>
     </body>
 </html>
