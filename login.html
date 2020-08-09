@@ -2,21 +2,25 @@
     <head>
         <title>SBook Login</title>
         <link rel="stylesheet" href="css/login.css">
+        <script src="javascript/login.js"></script>
     </head>
     <body style="background-color:aliceblue; align-items: center;">    
         <div class="card">  
-        <form action="index.html" method="POST">   
+        <form id="login" name="login" action="index.html" onsubmit="return validate()" method="POST">   
             <img src="images/logo.png" alt="SBook" style=" border-radius: 8px; margin-top: 10px;"> <br> 
             <label style="text-align: center; font-size:xx-large; font-family:Georgia, 'Times New Roman', Times, serif;">User Login</label>
             <table style="text-align: right; margin-top: 10px;">
                 <tr>
                     <td><label style="font-size: x-large ;">Username : </label></td>
-                    <td><input type="email" class="textbox" placeholder="Enter Email ID" name="username" required></td>
+                    <td><input type="email" name="username" placeholder="Enter Email ID" onchange="checkUsername()"></td>
                 </tr>
+                <tr id="username-tr" style="color: red;display: none;"><td colspan="2" align="right">username required*</td></tr>
+                <tr id="username-tr1" style="color: red;display: none;"><td colspan="2" align="right">Enter valid email id*</td></tr>
                 <tr>
                     <td><label style="font-size: x-large;">Password : </label></td>
-                    <td><input type="password" class="textbox" placeholder="Enter Password" name="password" required></td>
+                    <td><input type="password" name="pass" placeholder="Enter Password" onfocus="checkUsername()" onchange="checkPass()"></td>
                 </tr>
+                <tr id="pass-tr" style="color: red;display: none;"><td colspan="2" align="right">password required*</td></tr>
                 <tr>
                     <td><input type="submit" class="button1" value="Login!" style="background-color: cornflowerblue;" ></td>
                     <td><input type="reset" class="button1" value="Cancel" style="background-color: cornflowerblue;"></td>

@@ -2,6 +2,7 @@
     <head>
         <title>Message Box</title>
         <link rel="stylesheet" href="css/messagebox.css">
+        <script src="javascript/messagebox.js"></script>
     </head>
     <body style="background-color:aliceblue;">
         <div class="header sticky">
@@ -33,21 +34,22 @@
                     <tr>
                         <td><img src="images/user1.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
                         <td><h4>User1</h4></td>
-                        <td><input type="button" class="button1" value="send message" style="background-color: cornflowerblue;"></td>
+                        <td><input type="button" id="user1" class="button1" value="send message" onclick="open_tab(this.id)" style="background-color: cornflowerblue;"></td>
                     </tr>
                     <tr>
                         <td><img src="images/user2.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
                         <td><h4>User2</h4></td>
-                        <td><input type="button" class="button1" value="send message" style="background-color: cornflowerblue;"></td>
+                        <td><input type="button" id="user2" class="button1" value="send message" onclick="open_tab(this.id)" style="background-color: cornflowerblue;"></td>
                     </tr>
                 </table>
             </div></div>
             <div style="grid-column-start: 3;">
-            <div class="card" style="margin-top: 60px; width:700px; height:500px;">
+            <div id="chatbox" class="card" style="margin-top: 60px; width:700px; height:500px; display: none;">
                 <table style="margin: 10px; text-align:left;">
                     <tr>
-                        <td><img src="images/user1.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
-                        <td><h4>User1</h4></td>
+                        <td><img src="images/user1.jpg" id="chatpic" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
+                        <td><h3 id="chatname">User1</h3></td>
+                        <td align="right"><input type="button" class="button1" value="close" onclick="close_tab()" style="background-color: grey;margin-left: 450px;"></td>
                     </tr>
                 </table>
                 <div class="card" style="width: 700px; height: 350px;">

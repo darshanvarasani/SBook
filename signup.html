@@ -2,49 +2,52 @@
     <head>
         <title>SBook Sign up!</title>
         <link rel="stylesheet" href="css/login.css">
+        <script src="javascript/signup.js"></script>
     </head>
     <body style="background-color:aliceblue; align-items: center;">    
-        <div class="card" style="margin-top: 10px; width: fit-content;">  
-        <form action="login.html" method="POST">   
+        <div class="card" style="margin-top: 10px; width: 400px;">  
+        <form id="signup" name="signup" action="login.html" onsubmit="return validate()" method="POST">   
             <img src="images/logo.png" alt="SBook" style=" border-radius: 8px; margin-top: 10px;"> <br> 
             <label style="text-align: center; font-size:xx-large; font-family:Georgia, 'Times New Roman', Times, serif;">User SignUP</label>
             <table style="text-align: right; margin-right: 10px;">           
                 <tr>
                     <td><label>First Name : </label></td>
-                    <td><input type="text" placeholder="Enter First name" name="fname" required></td>
+                    <td><input type="text" placeholder="Enter First name" onchange="checkFname()" name="fname"></td>
                 </tr>
+                <tr id="fname-tr" style="color: red;display: none;"><td colspan="2" align="right">first name required*</td></tr>
+                <tr id="fname-tr1" style="color: red;display: none;"><td colspan="2" align="right">name must be alphabetical*</td></tr>
                 <tr>
                     <td><label>Last Name : </label></td>
-                    <td><input type="text" placeholder="Enter Last name" name="lname" required></td>
+                    <td><input type="text" placeholder="Enter Last name" onfocus="checkFname()" onchange="checkLname()" name="lname"></td>
                 </tr>
+                <tr id="lname-tr" style="color: red;display: none;"><td colspan="2" align="right">last name required*</td></tr>
+                <tr id="lname-tr1" style="color: red;display: none;"><td colspan="2" align="right">name must be alphabetical*</td></tr>
                 <tr>
                     <td><label>Email ID : </label></td>
-                    <td><input type="email" placeholder="Enter Email id" name="email" required></td>
+                    <td><input type="email" placeholder="Enter Email id" onfocus="checkLname()" onchange="checkEmail()" name="email"></td>
                 </tr>
+                <tr id="email-tr" style="color: red;display: none;"><td colspan="2" align="right">email id required*</td></tr>
+                <tr id="email-tr1" style="color: red;display: none;"><td colspan="2" align="right">Enter valid email id*</td></tr>
                 <tr>
                     <td><label>Password : </label></td>
-                    <td><input id="pass" name="pass" placeholder="Enter password" type="password" data-type="password" required></td>
+                    <td><input id="pass" name="pass" placeholder="Enter password" onfocus="checkEmail()" onchange="checkPass()" type="password"></td>
                 </tr>
+                <tr id="pass-tr" style="color: red;display: none;"><td colspan="2" align="right">password required*</td></tr>
+                <tr id="pass-tr1" style="color: red;display: none;"><td colspan="2" align="right">password must be alphanumeric(8-16 char)*</td></tr>
                 <tr>
                     <td><label>Confirm Password : </label></td>
-                    <td><input id="pass" name="cpass" placeholder="Confirm password" type="password" data-type="password" required></td>
+                    <td><input id="cpass" name="cpass" placeholder="Confirm password" onfocus="checkPass()" onchange="checkCPass()" type="password"></td>
+                </tr>
+                <tr id="cpass-tr" style="color: red;display: none;"><td colspan="2" align="right">password does not match*</td></tr>
+                <tr>
+                    <td><label>Gender : </label></td>
+                    <td align="left"><input type="radio" onfocus="checkCPass()" name="gender" value="Male" checked>Male<input type="radio" onfocus="checkCPass()" name="gender" value="Female">Female</td>
                 </tr>
                 <tr>
                     <td><label>Birthdate : </label></td>
-                    <td><input type="date" name="dob" required></td>
+                    <td><input type="date" onfocus="checkCPass()" name="dob"></td>
                 </tr>
-                <tr>
-                    <td><label>Gender : </label></td>
-                    <td align="left"><input type="radio" name="gender" value="Male">Male<input type="radio" name="gender" value="Female">Female</td>
-                </tr>
-                <tr>
-                    <td><label>City : </label></td>
-                    <td><input type="text" placeholder="Enter City" name="city"></td>
-                </tr>
-                <tr>
-                    <td><label>State : </label></td>
-                    <td><input type="text" placeholder="Enter State" name="state"></td>
-                </tr>
+                <tr id="dob-tr" style="color: red;display: none;"><td colspan="2" align="right">birthdate required*</td></tr>
                 <tr>
                     <td><input type="submit" class="button1" value="Login!" style="background-color: cornflowerblue;" ></td>
                     <td><input type="reset" class="button1" value="Cancel" style="background-color: cornflowerblue;"></td>
