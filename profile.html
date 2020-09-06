@@ -2,6 +2,14 @@
     <head>
         <title>Profile</title>
         <link rel="stylesheet" href="css/profile.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            .nav-pills a:visited{
+                background-color: green;
+            }
+        </style>
     </head>
     <body style="background-color:aliceblue;">
         <div class="header sticky">
@@ -14,7 +22,7 @@
                 <a href="login.html">Logout</a>
             </div>
         </div>
-        <div class="grid-container">
+        <div class="grid-container" style="margin-top: 20px;">
             <div style="grid-column-start: 1;">
             <div class="card" style="margin-top: 60px; width: 300px; height: 400px;">
                 <img src="images/avtar.jpg" alt="Avatar" style="width: 200px; height: 200px; border-radius: 50%; margin-left: 50px;">
@@ -28,13 +36,14 @@
             </div></div>
             <div style="grid-column-start: 2;">
             <div class="card" style="margin-top: 60px; width: 1000px; height:fit-content;">
-                <ul>
+                <ul id="myTab" class="nav nav-pills">
                     <div style="margin-left: 10px;">
-                    <li><label for="about"><a class="active" href="#">About</a></label></li>
-                    <li><label for="friends"><a href="#">Friends</a></label></li>
-                    <li><label for="photos"><a href="#">Photos</a></label></li></div>
+                    <li class="nav-item"><label for="about"><a class="nav-link" href="#about">About</a></label></li>
+                    <li class="nav-item"><label for="friends"><a class="nav-link" href="#friends">Friends</a></label></li>
+                    <li class="nav-item"><label for="photos"><a class="nav-link" href="#photos">Photos</a></label></li></div>
                 </ul>
-                <div id="about">
+                <div class="tab-content">
+                <div class="tab-pane fade" id="about" style="background-color: white;">
                 <table style="margin: 20px; text-align: center;">
                     <tr>
                         <td><label>First Name : </label></td>
@@ -76,7 +85,7 @@
                         <td colspan="2"><input type="submit" class="button1" value="Update Details" style="background-color: #4CAF50; float: right;"></td>
                     </tr>
                 </table></div>
-                <div id="friends">
+                <div class="tab-pane fade" id="friends" style="background-color: white;">
                     <table style="margin: 20px; text-align: center; width: 30%;">
                         <tr>
                             <td><img src="images/user1.jpg" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 10px;"></td>
@@ -88,7 +97,7 @@
                         </tr>
                     </table>
                 </div>
-                <div id="photos">
+                <div class="tab-pane fade" id="photos" style="background-color: white;">
                     <div class="card" style="margin-top: 10px; width: 1000px; height:fit-content;">
                         <table style="margin: 10px; text-align:left;">
                             <tr>
@@ -120,5 +129,13 @@
                 </div>
             </div></div>
         </div>
+        <script>
+            $(document).ready(function(){ 
+                $("#myTab a").click(function(e){
+                    e.preventDefault();
+                    $(this).tab('show');
+                });
+            });
+          </script>
     </body>
 </html>

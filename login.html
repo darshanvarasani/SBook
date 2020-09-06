@@ -2,24 +2,32 @@
     <head>
         <title>SBook Login</title>
         <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/login.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     </head>
     <body style="background-color:aliceblue; align-items: center;">    
-        <script src="javascript/login.js"></script>
+        <!-- <script src="javascript/login.js"></script> -->
         <div class="card">  
-        <form id="login" name="login" action="index.html" onsubmit="return validate()">   
+        <form id="login" class="needs-validation" name="login" action="index.html" novalidate>   
             <img src="images/logo.png" alt="SBook" style=" border-radius: 8px; margin-top: 10px;"> <br> 
             <label style="text-align: center; font-size:xx-large; font-family:Georgia, 'Times New Roman', Times, serif;">User Login</label>
             <table style="text-align: right; margin-top: 10px;">
-                <tr>
+                <tr><div class="form-row">
                     <td><label style="font-size: x-large ;">Username : </label></td>
-                    <td><input type="email" name="username" placeholder="Enter Email ID" onchange="checkUsername()"></td>
-                </tr>
+                    <td><input type="email" name="username" class="form-control" placeholder="Enter Email ID" required></td>
+                    <div class="valid-tooltip"> Looks good! </div>
+                    <div class="invalid-tooltip">Name is required! </div>
+                </div></tr>
                 <tr id="username-tr" style="color: red;display: none;"><td colspan="2" align="right">username required*</td></tr>
                 <tr id="username-tr1" style="color: red;display: none;"><td colspan="2" align="right">Enter valid email id*</td></tr>
-                <tr>
+                <tr><div class="form-row">
                     <td><label style="font-size: x-large;">Password : </label></td>
-                    <td><input type="password" name="pass" placeholder="Enter Password" onfocus="checkUsername()" onchange="checkPass()"></td>
-                </tr>
+                    <td><input type="password" name="pass" class="form-control" placeholder="Enter Password" required></td>
+                    <div class="valid-tooltip"> Looks good! </div>
+                    <div class="invalid-tooltip">password is required! </div>
+                </div></tr>
                 <tr id="pass-tr" style="color: red;display: none;"><td colspan="2" align="right">password required*</td></tr>
                 <tr>
                     <td><input type="submit" class="button1" value="Login!" style="background-color: cornflowerblue;" ></td>
@@ -35,6 +43,25 @@
                     <td colspan="2" align="left"><a href="adminlogin.html" style="display: block; margin: 5px;">Login as admin </a></td>
                 </tr>
             </table>      
-        </form>  </div>   
+        </form>  </div> 
+        <script>
+            (function () {
+                'use strict';
+                window.addEventListener('load', function () {
+                    // Get the forms we want to add validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+        </script>  
     </body>     
 </html>
