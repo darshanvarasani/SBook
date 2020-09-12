@@ -4,16 +4,11 @@
         <link rel="stylesheet" href="css/profile.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <style>
-            .nav-pills a:visited{
-                background-color: green;
-            }
-        </style>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>        
     </head>
     <body style="background-color:aliceblue;">
         <div class="header sticky">
-            <img src="images/logo.png" alt="SBook">
+            <img src="images/logo.png" alt="SBook" style="height: 40px;">
             <div class="header-right">
                 <a href="index.html">Feed</a>
                 <a href="friends.html">Friends</a>
@@ -36,14 +31,14 @@
             </div></div>
             <div style="grid-column-start: 2;">
             <div class="card" style="margin-top: 60px; width: 1000px; height:fit-content;">
-                <ul id="myTab" class="nav nav-pills">
-                    <div style="margin-left: 10px;">
-                    <li class="nav-item"><label for="about"><a class="nav-link" href="#about">About</a></label></li>
-                    <li class="nav-item"><label for="friends"><a class="nav-link" href="#friends">Friends</a></label></li>
-                    <li class="nav-item"><label for="photos"><a class="nav-link" href="#photos">Photos</a></label></li></div>
+                <div class="container" style="width: 1000px; padding-left: 0px;">
+                <ul id="myTab" class="nav nav-tabs" style="width: 1000px;">
+                    <li class="active"><a data-toggle="tab" href="#about">About</a></li>
+                    <li><a data-toggle="tab" href="#friends">Friends</a></li>
+                    <li><a data-toggle="tab" href="#photos">Photos</a></li>
                 </ul>
                 <div class="tab-content">
-                <div class="tab-pane fade" id="about" style="background-color: white;">
+                <div class="tab-pane fade in active" id="about" style="background-color: white; ">
                 <table style="margin: 20px; text-align: center;">
                     <tr>
                         <td><label>First Name : </label></td>
@@ -82,7 +77,31 @@
                         <td><input type="text" placeholder="Enter State" name="state"></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input type="submit" class="button1" value="Update Details" style="background-color: #4CAF50; float: right;"></td>
+                        <td colspan="2"><input type="submit" class="button1" data-toggle="modal" data-target="#myModal" value="Update Details" style="background-color: #4CAF50; float: right;"></td>
+                        <div class="modal" id="myModal" data-backdrop="static">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                              
+                                <!-- Modal Header -->
+                                <!-- <div class="modal-header">
+                                  <h4 class="modal-title">Update Details</h4>
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div> -->
+                                
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                   <h3> Confirm update details</h3>
+                                </div>
+                                
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>                                  
+                                </div>
+                                
+                              </div>
+                            </div>
+                          </div>
                     </tr>
                 </table></div>
                 <div class="tab-pane fade" id="friends" style="background-color: white;">
@@ -127,7 +146,7 @@
                         <input type="button" class="button1" value="Comment" style="margin: 10px; background-color: cornflowerblue;">
                     </div>
                 </div>
-            </div></div>
+            </div></div></div>
         </div>
         <script>
             $(document).ready(function(){ 
